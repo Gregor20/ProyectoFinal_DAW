@@ -6,6 +6,7 @@ class Producto {
     private $id;
     private $nombre;
     private $precio;
+    private $descripcion;
     private $id_categoria;
     private $imagen;
 
@@ -25,13 +26,13 @@ class Producto {
         return mysqli_num_rows($resultado) > 0; // Devuelve true si el producto existe, false si no existe
     }
 
-    public function crear($nombre, $precio, $id_categoria, $imagen) {
+    public function crear($nombre, $precio, $descripcion, $id_categoria, $imagen) {
 
         // Si el producto no existe, lo insertamos en la bd
         if(!$this->existe($nombre)) {
 
-            $sql = "INSERT INTO productos (nombre, precio, id_categoria, imagen) 
-            VALUES ('$nombre', '$precio', '$id_categoria', '$imagen')";
+            $sql = "INSERT INTO productos (nombre, precio, descripcion, id_categoria, imagen) 
+            VALUES ('$nombre', '$precio', '$descripcion', '$id_categoria', '$imagen')";
 
             $resultado = mysqli_query($this->conexion, $sql);
 
@@ -58,9 +59,9 @@ class Producto {
         }
     }
 
-    public function actualizar($id, $nombre, $precio, $id_categoria, $imagen=NULL) {
+    public function actualizar($id, $nombre, $precio, $descripcion, $id_categoria, $imagen=NULL) {
 
-        $sql = "UPDATE productos SET nombre='$nombre', precio='$precio', id_categoria='$id_categoria'";
+        $sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion', id_categoria='$id_categoria'";
 
         // Si se añade una imagen, se actualiza tambien el campo imagen
         if($imagen !== NULL) {

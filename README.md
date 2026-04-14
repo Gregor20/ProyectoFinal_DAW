@@ -49,7 +49,7 @@ Su finalidad es integrar y aplicar los conocimientos adquiridos durante el ciclo
 Moda_shop/
 ├── admin/                # Panel de control (solo para el administrador)
 │   ├── index.php         # Dashboard del admin                                     --en ello
-│   ├── crear-producto.php
+│   ├── crear-producto.php                                                          --en ello
 │   ├── editar-producto.php
 │   └── eliminar-producto.php
 ├── assets/               # Recursos estáticos
@@ -58,14 +58,14 @@ Moda_shop/
 │   └── img/              # Imágenes de productos y logo
 ├── config/               # Configuración del sistema
 │   └── db.php            # Conexión a la base de datos (PDO? /MySQL/mysqli)        --check
-├── includes/             # Código reutilizable (Modularidad)
+├── includes/             # Código reutilizable (Modularidad, "cajón de herramientas")
 │   ├── header.php        # Menú de navegación común                                --check
 │   ├── footer.php        # Pie de página común                                     --check
-│   ├── funciones.php     # Lógica común (formatear precios, sesiones)
+│   ├── Producto.php      # Clase Producto
+│   ├── Usuario.php       # Clase Usuario
 │   └── auth.php          # Control de acceso por roles 
 ├── vws/                  # Vistas o páginas principales
 │   ├── catalogo.php      # Listado de productos
-│   ├── producto.php      # Detalle de un producto
 │   ├── login.php         # Acceso de usuarios
 │   ├── registro.php      # Registro de nuevos clientes
 │   ├── carrito.php       # Gestión del carrito

@@ -29,7 +29,7 @@ INSERT INTO roles (nombre_rol) VALUES ('admin'), ('cliente');
 CREATE TABLE IF NOT EXISTS categorias (
     id         INT          AUTO_INCREMENT PRIMARY KEY,
     nombre     VARCHAR(50)  NOT NULL UNIQUE,
-    -- imagen_url VARCHAR(500) DEFAULT NULL -- Opcional: URL de imagen representativa de la categoría
+    imagen_url VARCHAR(500) DEFAULT NULL -- Opcional: URL de imagen representativa de la categoría
 );
 
 INSERT INTO categorias (nombre) VALUES
