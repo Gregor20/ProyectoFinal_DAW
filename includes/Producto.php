@@ -31,7 +31,7 @@ class Producto {
         // Si el producto no existe, lo insertamos en la bd
         if(!$this->existe($nombre)) {
 
-            $sql = "INSERT INTO productos (nombre, precio, descripcion, id_categoria, imagen) 
+            $sql = "INSERT INTO productos (nombre, precio, descripcion, id_categoria, imagen_url) 
             VALUES ('$nombre', '$precio', '$descripcion', '$id_categoria', '$imagen')";
 
             $resultado = mysqli_query($this->conexion, $sql);
@@ -70,7 +70,7 @@ class Producto {
 
         // Actualiza la variable $sql con .= para concatenar la parte del WHERE
         // Importante añadir el WHERE para actualizar solo el producto con id especificado
-        $sql .= "WHERE id='$id'";
+        $sql .= " WHERE id='$id'";
 
         $resultado = mysqli_query($this->conexion, $sql);
 
@@ -80,6 +80,24 @@ class Producto {
             return false; // Error al actualizar el producto
         }
 
+    }
+
+    public function listarTodos() {
+
+        $sql = "SELECT p.*, c.nombre as categoria_nombre 
+            FROM productos p 
+            LEFT JOIN categorias c ON p.id_categoria = c.id";
+
+        return mysqli_query($this->conexion, $sql);
+    }
+
+    public function obtenerPorId($id) {
+        
+        $sql = "SELECT * FROM productos WHERE id = '$id'";
+        $resultado = mysqli_query($this->conexion, $sql);
+    
+        // Devuelve un array asociativo con los datos del producto (o false si no existe)
+        return mysqli_fetch_assoc($resultado); 
     }
 
 }
