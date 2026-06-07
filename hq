@@ -1,0 +1,47 @@
+[33mcommit 6a6c6d113fb27ca554ffc01802be4cce3146f417[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 14:07:30 2026 +0200
+
+    archivo de prueba eliminado
+
+[33mcommit 3ac8a950afdd30971f530440dfd775bcaab62cc7[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mpruebas[m[33m)[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 14:03:10 2026 +0200
+
+    Actualizo gitignore y creado archivo config.php.example para hacer conexiones de prueba a la base de datos si alguien quiero probar
+
+[33mcommit ea1434af4f974606fb694980f5eb2244972f6a6c[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 13:51:06 2026 +0200
+
+    Añado .gitignore para excluir archivos de configuracion internos
+
+[33mcommit d614ccad64473f5be928f19b41ac610a34a5cd98[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 13:24:53 2026 +0200
+
+    El footer genérico para reutilizarlo en mas páginas.(Con el simbolo del copyright)
+
+[33mcommit be1e3658d2fa44b658464ddd4c36a2088c33d0fb[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 13:23:06 2026 +0200
+
+    El header genérico para reutilizarlo en mas páginas.(Con una barra de navegación)
+
+[33mcommit b93847856c534cfe9859b1994384ea08269a6bc2[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Mon Apr 13 13:09:04 2026 +0200
+
+    Añado Readme inicial con la presentación general del proyecto, la estructura de las carpetas y las tecnologías previstas para utilizar
+
+[33mcommit 58e73aa272e0d55aa6d90a44c94f841d26b7febf[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Wed Mar 11 13:41:56 2026 +0100
+
+    commit 1
+
+[33mcommit 22982f8b2cbf9d9c7ba6637954e05d7b650ebdce[m
+Author: Grigoriy <gregorct20@gmail.com>
+Date:   Wed Mar 11 13:40:21 2026 +0100
+
+    Primer commit de prueba

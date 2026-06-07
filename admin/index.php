@@ -16,14 +16,19 @@ $resultado = $productoObj->listarTodos();
     <h1>Panel de Administración - Productos</h1>
     <?php
     // Capturamos el estado de la URL si existe
-    if (isset($_GET['status'])) {
-        if ($_GET['status'] == 'deleted') {
-            echo "<p class='exito' style='background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;'>¡Producto eliminado correctamente de la tienda!</p>";
-        } elseif ($_GET['status'] == 'error') {
-            echo "<p class='error'>No se pudo eliminar el producto. Inténtalo de nuevo.</p>";
+        if (isset($_GET['status'])) {
+            if ($_GET['status'] == 'deleted') {
+                echo "<p class='exito' style='background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;'>¡Producto eliminado correctamente de la tienda!</p>";
+            } 
+        // ¡AÑADIDO AQUÍ EL NUEVO AVISO!
+        elseif ($_GET['status'] == 'updated') {
+            echo "<p class='exito' style='background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb;'>¡Producto actualizado con éxito!</p>";
+        } 
+        elseif ($_GET['status'] == 'error') {
+            echo "<p class='error'>No se pudo realizar la acción. Inténtalo de nuevo.</p>";
         }
     }
-?>
+    ?>
     
     <table class="listado-productos">
         <thead>
