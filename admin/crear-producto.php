@@ -14,7 +14,8 @@ echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
     <form action="crear-producto.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="nombre" placeholder="Ingresa el nombre del producto" required />
 
-        <input type="number" name="precio" placeholder="Ingresa el precio del producto" required />
+        <!-- puedes avanzar de céntimo en céntimo con step="0.01" -->
+        <input type="number" name="precio" step="0.01" placeholder="Ingresa el precio del producto" required />
 
         <textarea name="descripcion" placeholder="Ingresa la descripción del producto" required></textarea>
 

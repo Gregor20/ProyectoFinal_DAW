@@ -6,12 +6,12 @@ Su finalidad es integrar y aplicar los conocimientos adquiridos durante el ciclo
 👥 Equipo de Desarrollo
 
     Estudiante 1: [Grigoriy Kobyliakov] - Color asignado: [verde] 
-    Estudiante 2: [Markiian Yakymiv] - Color asignado: [Su Color] 
+    Estudiante 2: [Markiian Yakymiv] - Color asignado: [azul] 
     Tutor/a: [Montserrat]
 
 🛠️ Stack Tecnológico
 
-    Backend: PHP (Estructura modular/POO) 
+    Backend: PHP (Estructura modular/POO)
     Base de Datos: MySQL/MariaDB (vía XAMPP)
     Frontend: HTML5, CSS3 y JavaScript
     Entorno: XAMPP, Visual Studio Code y Microsoft Teams para la gestión grupal
@@ -33,7 +33,7 @@ Su finalidad es integrar y aplicar los conocimientos adquiridos durante el ciclo
 
     -Descarga: Coloca la carpeta del proyecto en C:/xampp/htdocs/.
     -Base de Datos:Inicia Apache y MySQL en el Panel de Control de XAMPP.
-    -Accede a http://localhost/phpmyadmin.Crea una base de datos llamada tienda_moda.
+    -Accede a http://localhost/phpmyadmin. Crea una base de datos llamada tienda_moda.
     -Importa el archivo database/estructura.sql incluido en este repositorio.
     -Configuración: Revisa el archivo config/db.php para asegurar que las credenciales coinciden con tu entorno local.
     -Acceso: Abre el navegador en http://localhost/nombre-de-tu-carpeta.
@@ -49,9 +49,9 @@ Su finalidad es integrar y aplicar los conocimientos adquiridos durante el ciclo
 Moda_shop/
 ├── admin/                # Panel de control (solo para el administrador)
 │   ├── index.php         # Dashboard del admin                                     --en ello
-│   ├── crear-producto.php                                                          --en ello
-│   ├── editar-producto.php
-│   └── eliminar-producto.php
+│   ├── crear-producto.php                                                          --check
+│   ├── editar-producto.php                                                         --check
+│   └── eliminar-producto.php                                                       --check
 ├── assets/               # Recursos estáticos
 │   ├── css/              # Archivos de estilos (estilo moderno y directo)
 │   ├── js/               # Scripts de JavaScript (validaciones, carrito)
@@ -61,7 +61,7 @@ Moda_shop/
 ├── includes/             # Código reutilizable (Modularidad, "cajón de herramientas")
 │   ├── header.php        # Menú de navegación común                                --check
 │   ├── footer.php        # Pie de página común                                     --check
-│   ├── Producto.php      # Clase Producto
+│   ├── Producto.php      # Clase Producto                                          --en ello
 │   ├── Usuario.php       # Clase Usuario
 │   └── auth.php          # Control de acceso por roles 
 ├── vws/                  # Vistas o páginas principales
