@@ -1,0 +1,83 @@
+/* ============================================================
+   CREAR PRODUCTO 
+   ============================================================ */
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    color: #f8fafc;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.crear-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
+}
+
+.crear-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.crear-container input,
+.crear-container textarea,
+.crear-container select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    color: #f8fafc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.crear-container input:focus,
+.crear-container textarea:focus,
+.crear-container select:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.35);
+}
+
+.btn-crear {
+    background: #f97316;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-crear:hover {
+    background: #ea580c;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+}
+
+.error, .exito {
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fecaca;
+}
+
+.exito {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #bbf7d0;
+}

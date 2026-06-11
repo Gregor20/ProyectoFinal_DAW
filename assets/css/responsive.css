@@ -1,0 +1,98 @@
+/* ============================================================
+   RESPONSIVE GLOBAL — PARA TODO EL PROYECTO
+   ============================================================ */
+
+/* Ajustes generales */
+@media (max-width: 1024px) {
+    header nav ul {
+        gap: 15px;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .catalogo-container {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .carrito-container {
+        padding: 15px;
+    }
+
+    .carrito-table th,
+    .carrito-table td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .login-container,
+    .registro-container,
+    .contacto-container {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .dashboard-container {
+        padding: 20px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+
+    .btn-add,
+    .btn-finalizar,
+    .btn-login,
+    .btn-registro,
+    .btn-contacto {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .carrito-resumen {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
