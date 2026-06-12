@@ -1,5 +1,5 @@
 /* ============================================================
-   CREAR PRODUCTO 
+   ELIMINAR PRODUCTO — 
    ============================================================ */
 
 body {
@@ -8,8 +8,8 @@ body {
     font-family: "Inter", system-ui, sans-serif;
 }
 
-.crear-container {
-    max-width: 650px;
+.eliminar-container {
+    max-width: 600px;
     margin: 40px auto;
     padding: 25px;
     background: rgba(15, 23, 42, 0.85);
@@ -17,37 +17,23 @@ body {
     border: 1px solid rgba(148, 163, 184, 0.15);
     box-shadow: 0 12px 35px rgba(0,0,0,0.45);
     backdrop-filter: blur(12px);
+    text-align: center;
 }
 
-.crear-container h1 {
-    text-align: center;
+.eliminar-container h1 {
     font-size: 2rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
-.crear-container input,
-.crear-container textarea,
-.crear-container select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    background: rgba(30, 41, 59, 0.85);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    color: #f8fafc;
-    margin-bottom: 15px;
-    font-size: 1rem;
+.eliminar-container p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #cbd5e1;
 }
 
-.crear-container input:focus,
-.crear-container textarea:focus,
-.crear-container select:focus {
-    border-color: #f97316;
-    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.35);
-}
-
-.btn-crear {
-    background: #f97316;
+.btn-eliminar {
+    background: #ef4444;
     color: white;
     padding: 12px 20px;
     border-radius: 10px;
@@ -58,10 +44,10 @@ body {
     transition: 0.25s ease;
 }
 
-.btn-crear:hover {
-    background: #ea580c;
+.btn-eliminar:hover {
+    background: #dc2626;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35);
 }
 
 .error, .exito {

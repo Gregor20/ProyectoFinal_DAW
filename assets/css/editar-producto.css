@@ -1,5 +1,5 @@
 /* ============================================================
-   CREAR PRODUCTO 
+   EDITAR PRODUCTO 
    ============================================================ */
 
 body {
@@ -8,7 +8,7 @@ body {
     font-family: "Inter", system-ui, sans-serif;
 }
 
-.crear-container {
+.editar-container {
     max-width: 650px;
     margin: 40px auto;
     padding: 25px;
@@ -19,16 +19,16 @@ body {
     backdrop-filter: blur(12px);
 }
 
-.crear-container h1 {
+.editar-container h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 25px;
     font-weight: 700;
 }
 
-.crear-container input,
-.crear-container textarea,
-.crear-container select {
+.editar-container input,
+.editar-container textarea,
+.editar-container select {
     width: 100%;
     padding: 12px;
     border-radius: 10px;
@@ -39,15 +39,22 @@ body {
     font-size: 1rem;
 }
 
-.crear-container input:focus,
-.crear-container textarea:focus,
-.crear-container select:focus {
-    border-color: #f97316;
-    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.35);
+.editar-container input:focus,
+.editar-container textarea:focus,
+.editar-container select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
 }
 
-.btn-crear {
-    background: #f97316;
+.img-preview {
+    width: 120px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.btn-editar {
+    background: #3b82f6;
     color: white;
     padding: 12px 20px;
     border-radius: 10px;
@@ -58,10 +65,10 @@ body {
     transition: 0.25s ease;
 }
 
-.btn-crear:hover {
-    background: #ea580c;
+.btn-editar:hover {
+    background: #2563eb;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
 }
 
 .error, .exito {

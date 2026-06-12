@@ -1,0 +1,112 @@
+/* ============================================================
+   CATÁLOGO DE PRODUCTOS 
+   ============================================================ */
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    color: #f8fafc;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Contenedor principal */
+.catalogo-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Título */
+.catalogo-container h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #f1f5f9;
+}
+
+/* Grid de productos */
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+/* Imagen */
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Nombre */
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #f8fafc;
+}
+
+/* Descripción */
+.product-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+/* Precio */
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f97316;
+    margin-bottom: 15px;
+}
+
+/* Botón añadir al carrito */
+.btn-add {
+    background: #f97316;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background: #ea580c;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .catalogo-container {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
