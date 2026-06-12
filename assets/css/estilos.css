@@ -1,96 +1,313 @@
+/* Importamos la fuente elegante de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+/* Variables de Color Premium */
+:root {
+    --bg-oscuro: #0a0a0a;
+    --bg-tarjetas: #1a1a1a;
+    --dorado: #d4af37;
+    --dorado-hover: #b5952f;
+    --texto-claro: #e0e0e0;
+    --texto-mutado: #888888;
+    --borde-dorado: rgba(212, 175, 55, 0.3);
+}
+
 /* Configuración básica */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(225, 202, 150);
-    color: rgb(98, 108, 102);
+    font-family: 'Lato', sans-serif; /* Fuente limpia para lectura */
+    background-color: var(--bg-oscuro);
+    color: var(--texto-claro);
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-/* Contenedor principal */
-.container-crear {
-    max-width: 600px;
-    margin: 40px auto;
-    background: rgb(172, 168, 133);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    color: var(--dorado);
+    font-weight: 600;
 }
 
-h1 {
+/* Header y Navegación */
+header {
+    background-color: #000000;
+    border-bottom: 1px solid var(--borde-dorado);
+    padding: 15px 40px;
+}
+
+.barra_navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dorado);
+}
+
+.btn-login {
+    border: 1px solid var(--dorado);
+    padding: 8px 15px;
+    border-radius: 3px;
+}
+
+/* Botones Generales */
+.btn-primary, .btn-crear {
+    background-color: transparent;
+    color: var(--dorado);
+    border: 1px solid var(--dorado);
+    padding: 12px 24px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-crear:hover {
+    background-color: var(--dorado);
+    color: #000;
+}
+
+/* Tablas del Admin */
+.listado-productos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.listado-productos th {
+    background-color: var(--bg-tarjetas);
+    color: var(--dorado);
+    padding: 15px;
+    border-bottom: 1px solid var(--borde-dorado);
+}
+
+.listado-productos td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 25px;
-    font-size: 24px;
 }
 
-/* Estilos del Formulario */
-form {
+/*-------------------------------------------------------------------------------------------*/
+
+/* =========================================
+   ESTILOS DE FORMULARIOS PREMIUM (Admin & Login)
+   ========================================= */
+
+/* Contenedor flotante y centrado */
+.container-crear {
+    max-width: 550px;
+    margin: 60px auto; /* Centrado perfecto vertical y horizontal */
+    background-color: #111111; /* Un negro ligeramente más claro que el fondo */
+    padding: 40px 50px;
+    border: 1px solid var(--borde-dorado);
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.container-crear h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Forzar la estructura en columna (El truco de la alineación) */
+.container-crear form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre elementos */
+    gap: 20px; /* Espacio respirable entre inputs */
 }
 
-input[type="text"],
-input[type="number"],
-textarea,
-select {
+/* Etiquetas elegantes */
+.container-crear label {
+    color: var(--dorado);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: -12px; /* Acerca la etiqueta al input sutilmente */
+}
+
+/* Inputs, Textareas y Selects oscuros */
+.container-crear input[type="text"],
+.container-crear input[type="number"],
+.container-crear textarea,
+.container-crear select,
+.container-crear input[type="file"] {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box; /* Para que el padding no ensanche el input */
-    background-color: rgb(98, 108, 102);
-    color: rgb(225, 202, 150)
+    padding: 14px 15px;
+    background-color: #000000; /* Fondo negro puro */
+    color: var(--texto-claro);
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
+/* Ocultar el feo texto por defecto de los placeholders */
+.container-crear input::placeholder,
+.container-crear textarea::placeholder {
+    color: #444444;
+    font-style: italic;
 }
 
-input:focus, textarea:focus, select:focus {
+/* Efecto Focus (Cuando el usuario hace clic para escribir) */
+.container-crear input:focus,
+.container-crear textarea:focus,
+.container-crear select:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    border-color: var(--dorado);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
 }
 
-/* Botón de envío */
-.btn-crear {
-    background-color: rgb(67, 74, 66);
-    color: rgb(225, 202, 150);
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
+/* El botón de crear ocupando todo el ancho */
+.container-crear .btn-crear {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Texto de ayuda debajo del input file */
+.container-crear span {
+    font-size: 12px !important;
+    color: var(--texto-mutado) !important;
+    margin-top: -10px;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+/* =========================================
+   ESTILOS DEL CATÁLOGO PÚBLICO
+   ========================================= */
+
+.container-catalogo {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.subtitulo-catalogo {
+    text-align: center;
+    color: var(--texto-mutado);
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+/* La cuadrícula mágica (Responsive) */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* Diseño de cada prenda */
+.tarjeta-producto {
+    background-color: var(--bg-tarjetas);
+    border: 1px solid #222;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px); /* Efecto de levitación sutil */
+    border-color: var(--borde-dorado);
+}
+
+/* Contenedor de la imagen para que todas midan igual */
+.contenedor-imagen {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Proporción clásica de moda (más alta que ancha) */
+    overflow: hidden;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen sin deformarla */
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-producto:hover .contenedor-imagen img {
+    transform: scale(1.05); /* Zoom sutil al pasar el ratón */
+}
+
+/* Información debajo de la foto */
+.info-producto {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.categoria-etiqueta {
+    font-size: 11px;
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.info-producto h2 {
     font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 10px;
+    color: var(--texto-claro);
+    margin: 10px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
-.btn-crear:hover {
-    background-color: rgb(145, 139, 118);
+.info-producto .precio {
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado);
+    margin-bottom: 20px;
 }
 
-/* Mensajes de éxito y error */
-.exito {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-    border: 1px solid #c3e6cb;
+/* Botón específico de compra */
+.btn-comprar {
+    display: inline-block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--texto-claro);
+    border: 1px solid #444;
+    padding: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-    border: 1px solid #f5c6cb;
+.btn-comprar:hover {
+    background-color: var(--dorado);
+    color: #000;
+    border-color: var(--dorado);
 }
