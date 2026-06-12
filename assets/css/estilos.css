@@ -160,6 +160,7 @@ header {
 /* Inputs, Textareas y Selects oscuros */
 .container-crear input[type="text"],
 .container-crear input[type="number"],
+.container-crear input[type="email"],
 .container-crear textarea,
 .container-crear select,
 .container-crear input[type="file"] {
@@ -320,4 +321,47 @@ header {
     background-color: var(--dorado);
     color: #000;
     border-color: var(--dorado);
+}
+
+/* =========================================
+   BARRA DE BÚSQUEDA DEL HEADER
+   ========================================= */
+.form-busqueda {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.form-busqueda input {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--texto-claro);
+    padding: 8px 15px;
+    border-radius: 20px 0 0 20px; /* Borde redondeado solo a la izquierda */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-busqueda input:focus {
+    border-color: var(--dorado);
+}
+
+.form-busqueda button {
+    background-color: transparent;
+    color: var(--dorado);
+    border: 1px solid var(--dorado);
+    padding: 8px 15px;
+    border-radius: 0 20px 20px 0; /* Borde redondeado solo a la derecha */
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-busqueda button:hover {
+    background-color: var(--dorado);
+    color: #000;
 }
