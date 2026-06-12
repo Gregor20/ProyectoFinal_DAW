@@ -7,14 +7,28 @@ include '../includes/header.php';
 // Incluimos el css específico para esta página
 echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
 
-// 2. OBTENER LOS PRODUCTOS
+// 2. LÓGICA DE BÚSQUEDA Y OBTENCIÓN DE PRODUCTOS
 $productoObj = new Producto($conexion);
-$resultado = $productoObj->listarTodos();
+$titulo_pagina = "Nuestra Colección";
+$subtitulo_pagina = "Descubre la elegancia en cada prenda.";
+
+// Si el usuario ha usado el buscador
+if (isset($_GET['q']) && !empty(trim($_GET['q']))) {
+    $busqueda = trim($_GET['q']); // Limpiamos espacios
+    $resultado = $productoObj->buscar($busqueda);
+    
+    // Cambiamos el título dinámicamente
+    $titulo_pagina = "Resultados de búsqueda";
+    $subtitulo_pagina = "Has buscado: '" . htmlspecialchars($busqueda) . "'";
+} else {
+    // Si no hay búsqueda, mostramos todo normalmente
+    $resultado = $productoObj->listarTodos();
+}
 ?>
 
 <main class="container-catalogo">
-    <h1 class="titulo-catalogo">Nuestra Colección</h1>
-    <p class="subtitulo-catalogo">Descubre la elegancia en cada prenda.</p>
+    <h1 class="titulo-catalogo"><?php echo $titulo_pagina; ?></h1>
+    <p class="subtitulo-catalogo"><?php echo $subtitulo_pagina; ?></p>
 
     <div class="grid-productos">
         <?php

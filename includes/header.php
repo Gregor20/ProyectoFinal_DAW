@@ -21,6 +21,7 @@ $base_url = "http://localhost/moda_shop";
     <header>
         <nav class="barra_navegacion">
             <div class="logo">MODA 2026</div>
+            
             <ul class="nav-links">
                 <li><a href="<?php echo $base_url; ?>/index.php">Inicio</a></li>
                 <li><a href="<?php echo $base_url; ?>/vws/catalogo.php">Productos</a></li>
@@ -31,12 +32,19 @@ $base_url = "http://localhost/moda_shop";
                     <?php endif; ?>
 
                     <li><a href="<?php echo $base_url; ?>/vws/carrito.php">Mi Carrito</a></li>
-                    <li><a href="<?php echo $base_url; ?>/vws/perfil.php" style="color: var(--dorado); font-style: italic;">Hola, <?php echo $_SESSION['usuario_nombre']; ?></a></li>                    <li><a href="<?php echo $base_url; ?>/logout.php" class="btn-login">Cerrar Sesión</a></li>
+                    <li><a href="<?php echo $base_url; ?>/vws/perfil.php" style="color: var(--dorado); font-style: italic;">Hola, <?php echo $_SESSION['usuario_nombre']; ?></a></li>                    
+                    <li><a href="<?php echo $base_url; ?>/logout.php" class="btn-login">Cerrar Sesión</a></li>
 
                 <?php else: ?>
                     <li><a href="<?php echo $base_url; ?>/vws/contacto.php">Contacto</a></li>
                     <li><a href="<?php echo $base_url; ?>/vws/login.php" class="btn-login">Iniciar Sesión / Registro</a></li>
                 <?php endif; ?>
             </ul>
+
+            <form action="<?php echo $base_url; ?>/vws/catalogo.php" method="GET" class="form-busqueda">
+                <input type="text" name="q" placeholder="Buscar prenda..." required>
+                <button type="submit">Buscar</button>
+            </form>
+            
         </nav>
     </header>

@@ -100,5 +100,19 @@ class Producto {
         return mysqli_fetch_assoc($resultado); 
     }
 
+    // Método para buscar productos (Avanzado: busca en nombre y descripción)
+    public function buscar($termino) {
+        // Limpiamos el texto para evitar inyecciones SQL (Seguridad para tu TFG)
+        $termino = mysqli_real_escape_string($this->conexion, $termino);
+        
+        // Buscamos si la palabra está contenida en el nombre o en la descripción
+        $query = "SELECT p.*, c.nombre as categoria_nombre 
+                  FROM productos p 
+                  LEFT JOIN categorias c ON p.id_categoria = c.id 
+                  WHERE p.nombre LIKE '%$termino%' OR p.descripcion LIKE '%$termino%'";
+                  
+        return mysqli_query($this->conexion, $query);
+    }
+
 }
 ?>
