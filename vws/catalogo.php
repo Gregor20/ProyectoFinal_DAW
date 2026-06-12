@@ -3,7 +3,8 @@
 include '../config/db.php';
 include '../includes/Producto.php';
 include '../includes/header.php';
-// Inlcuimos el css específico para esta página
+
+// Incluimos el css específico para esta página
 echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
 
 // 2. OBTENER LOS PRODUCTOS
@@ -24,13 +25,16 @@ $resultado = $productoObj->listarTodos();
                 
                 echo '<article class="tarjeta-producto">';
                 echo '  <div class="contenedor-imagen">';
-                echo '      <img src="../assets/img/productos/' . $imagen . '" alt="' . $producto['nombre'] . '">';
+                
+                // CORRECCIÓN AQUÍ: Concatenamos $base_url, $imagen y el nombre correctamente
+                echo '      <img src="' . $base_url . '/assets/img/productos/' . $imagen . '" alt="' . $producto['nombre'] . '">';
+                
                 echo '  </div>';
                 echo '  <div class="info-producto">';
                 echo '      <span class="categoria-etiqueta">' . ($producto['categoria_nombre'] ?? 'General') . '</span>';
                 echo '      <h2>' . $producto['nombre'] . '</h2>';
                 echo '      <p class="precio">' . number_format($producto['precio'], 2, ',', '.') . ' €</p>';
-                // El botón de añadir al carrito (lo conectaremos en la siguiente fase)
+                // El botón de añadir al carrito
                 echo '      <a href="carrito.php?accion=agregar&id=' . $producto['id'] . '" class="btn-comprar">Añadir al Carrito</a>';
                 echo '  </div>';
                 echo '</article>';

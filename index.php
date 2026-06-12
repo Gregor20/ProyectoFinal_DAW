@@ -36,12 +36,13 @@ include 'includes/header.php';
                         break; // Si ya hemos pintado 3, detenemos el bucle
                     }
                     
+                    // RECUPERAMOS ESTA LÍNEA (Es vital para saber qué foto cargar)
                     $imagen = !empty($producto['imagen_url']) ? $producto['imagen_url'] : 'default.png';
                     ?>
                     
                     <article class="tarjeta-producto">
                         <div class="contenedor-imagen">
-                            <img src="assets/img/productos/<?php echo $imagen; ?>" alt="<?php echo $producto['nombre']; ?>">
+                            <img src="<?php echo $base_url; ?>/assets/img/productos/<?php echo $imagen; ?>" alt="<?php echo $producto['nombre']; ?>">
                         </div>
                         <div class="info-producto">
                             <span class="categoria-etiqueta"><?php echo $producto['categoria_nombre'] ?? 'General'; ?></span>
