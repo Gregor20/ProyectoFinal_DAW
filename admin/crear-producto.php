@@ -1,4 +1,10 @@
 <?php
+session_start();
+// Si no hay sesión, o si el rol no es 1 (Administrador), ¡lo echamos!
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol'] != 1) {
+    header("Location: ../vws/login.php");
+    exit();
+}
 //incluimos la conexión a la base de datos
 include '../config/db.php';
 // Incluimos el header

@@ -1,8 +1,16 @@
 <?php
+session_start();
+// Si no hay sesión, o si el rol no es 1 (Administrador), ¡lo echamos!
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol'] != 1) {
+    header("Location: ../vws/login.php");
+    exit();
+}
 // 1. INCLUDES
 include '../config/db.php';
 include '../includes/Producto.php';
 include '../includes/header.php';
+// Inlcuimos el css específico para esta página
+echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
 
 // 2. VALIDAR Y CAPTURAR EL ID DE LA URL (Fase GET)
 if (isset($_GET['id']) && !empty($_GET['id'])) {

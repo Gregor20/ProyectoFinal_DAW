@@ -1,10 +1,18 @@
 <?php
+session_start();
+// Si no hay sesión, o si el rol no es 1 (Administrador), ¡lo echamos!
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol'] != 1) {
+    header("Location: ../vws/login.php");
+    exit();
+}
 // Incluimos la conexión a la base de datos
 include '../config/db.php';
 // Incluimos la clase Producto (¡No te olvides de esta!)
 include '../includes/Producto.php';
 // Incluimos el header
 include '../includes/header.php';
+// Inlcuimos el css específico para esta página
+echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
 
 // Instanciamos el objeto Producto
 $productoObj = new Producto($conexion);

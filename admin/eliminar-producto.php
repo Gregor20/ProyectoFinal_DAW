@@ -1,7 +1,15 @@
 <?php
+session_start();
+// Si no hay sesión, o si el rol no es 1 (Administrador), ¡lo echamos!
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol'] != 1) {
+    header("Location: ../vws/login.php");
+    exit();
+}
 // 1. Incluimos las dependencias necesarias
 include '../config/db.php';
 include '../includes/Producto.php';
+// Inlcuimos el css específico para esta página
+echo '<link rel="stylesheet" href="../assets/css/estilos.css">';
 
 // 2. Comprobamos si el ID viaja en la URL y no está vacío
 if (isset($_GET['id']) && !empty($_GET['id'])) {
