@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
             exit();
         }
     } else {
-        $mensaje = "<p class='error' style='background-color: #330000; color: #ff6666; border-color: #ff6666;'>Correo o contraseña incorrectos.</p>";
+        $mensaje = "<p class='error'>Correo o contraseña incorrectos.</p>";
     }
 }
 ?>

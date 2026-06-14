@@ -4,6 +4,6 @@
             <p>&copy; 2026 Tienda de Moda. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $base_url; ?>/assets/js/main.js"></script>
 </body>
 </html>

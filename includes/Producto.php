@@ -27,21 +27,30 @@ class Producto {
     }
 
     public function crear($nombre, $precio, $descripcion, $id_categoria, $imagen) {
+        
+        // 1. SANEAMIENTO DE DATOS (Protección contra Inyección SQL)
+        $nombre = mysqli_real_escape_string($this->conexion, trim($nombre));
+        $descripcion = mysqli_real_escape_string($this->conexion, trim($descripcion));
+        $imagen = mysqli_real_escape_string($this->conexion, trim($imagen));
+        
+        // Forzamos que sean números (si alguien mete texto aquí, se convierte en 0)
+        $precio = floatval($precio); 
+        $id_categoria = intval($id_categoria);
 
         // Si el producto no existe, lo insertamos en la bd
         if(!$this->existe($nombre)) {
 
             $sql = "INSERT INTO productos (nombre, precio, descripcion, id_categoria, imagen_url) 
             VALUES ('$nombre', '$precio', '$descripcion', '$id_categoria', '$imagen')";
-
+            
             $resultado = mysqli_query($this->conexion, $sql);
 
             if($resultado) {
                 return true; // Producto creado exitosamente
-            }else{
+            } else {
                 return false; // Error al crear el producto
             }
-        }else{
+        } else {
             return false; // El producto ya existe, no se puede crear
         }
     }
@@ -61,25 +70,33 @@ class Producto {
 
     public function actualizar($id, $nombre, $precio, $descripcion, $id_categoria, $imagen=NULL) {
 
-        $sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion', id_categoria='$id_categoria'";
+        // 1. SANEAMIENTO DE DATOS (Protección contra Inyección SQL)
+        $id = intval($id); // Muy importante proteger también el ID
+        $nombre = mysqli_real_escape_string($this->conexion, trim($nombre));
+        $descripcion = mysqli_real_escape_string($this->conexion, trim($descripcion));
+        
+        $precio = floatval($precio);
+        $id_categoria = intval($id_categoria);
 
-        // Si se añade una imagen, se actualiza tambien el campo imagen
+        $sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion', id_categoria='$id_categoria'";
+        
+        // Si se añade una imagen, se actualiza también el campo imagen_url
         if($imagen !== NULL) {
-            $sql .= ", imagen='$imagen'";
+            $imagen = mysqli_real_escape_string($this->conexion, trim($imagen));
+            // CORRECCIÓN DE BUG: Antes decía imagen='$imagen', lo correcto es imagen_url
+            $sql .= ", imagen_url='$imagen'"; 
         }
 
-        // Actualiza la variable $sql con .= para concatenar la parte del WHERE
         // Importante añadir el WHERE para actualizar solo el producto con id especificado
         $sql .= " WHERE id='$id'";
-
+        
         $resultado = mysqli_query($this->conexion, $sql);
 
         if($resultado) {
             return true; // Producto actualizado exitosamente
-        }else{
+        } else {
             return false; // Error al actualizar el producto
         }
-
     }
 
     public function listarTodos() {

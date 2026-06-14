@@ -54,7 +54,8 @@ if (isset($_GET['q']) && !empty(trim($_GET['q']))) {
                 echo '</article>';
             }
         } else {
-            echo '<p style="text-align:center; width: 100%;">No hay productos disponibles en este momento.</p>';
+            // Sustituimos la clase "error" por nuestra nueva clase
+            echo '<div class="mensaje-vacio">No hemos encontrado ninguna prenda que coincida con tu búsqueda en este momento.</div>';
         }
         ?>
     </div>
